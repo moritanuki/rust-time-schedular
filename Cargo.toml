@@ -1,0 +1,11 @@
+[package]
+name = "rust-time-scheduler"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio-cron-scheduler = "*"
+
+[[bin]]
+name = "rust-time-schedular"
+path = "main.rs"
