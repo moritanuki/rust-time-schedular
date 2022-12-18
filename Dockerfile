@@ -1,7 +1,8 @@
 FROM rust:latest
-WORKDIR /usr/src/projects
 
-COPY . .
-RUN cargo build
+RUN apt update && apt install -y \
+ bash \
+ vim
 
+WORKDIR /usr/projects/src
 CMD ["cargo", "run"]
