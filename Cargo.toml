@@ -8,4 +8,4 @@ job_scheduler = "*"
 
 [[bin]]
 name = "rust-time-schedular"
-path = "main.rs"
+path = "src/main.rs"

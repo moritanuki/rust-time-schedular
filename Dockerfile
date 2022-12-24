@@ -1,8 +1,8 @@
 FROM rust:latest
 
-RUN apt update && apt install -y \
- bash \
- vim
+# RUN apt update && apt install -y \
+#  bash \
+#  vim
 
-WORKDIR /usr/projects/src
+WORKDIR /usr/rust-time-scheduler
 CMD ["cargo", "run"]

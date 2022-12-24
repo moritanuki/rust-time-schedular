@@ -10,16 +10,10 @@ cronのようなtime scheduler
  
 
  
-## Installation
- 
-```
-docker build -t scheduler .
-```
- 
 ## Usage
 
 ```
-docker run -v ~/Projects/rust-time-scheduler/src:/usr/projects scheduler
+docker-compose up --build
 ```
 
 ## Author
