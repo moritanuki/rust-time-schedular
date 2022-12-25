@@ -1,13 +1,17 @@
 use job_scheduler::{JobScheduler, Job};
 use std::time::Duration;
 use reqwest::Client;
+use dotenv::dotenv;
+use std::env;
 
 type Result<T> = std::result::Result<T, Box<dyn std::error::Error>>;
 
 #[tokio::main]
 async fn get() -> Result<()> {
+    dotenv().ok();
+
     let client = Client::new();
-    let url = "https://zipcloud.ibsnet.co.jp/api/search";
+    let url = env::var("URL").expect("URL must be set");
     let response = client
         .get(url)
         .query(&[("zipcode", "1000002")])
@@ -28,7 +32,6 @@ fn main() {
 
     loop {
         sched.tick();
-
         std::thread::sleep(Duration::from_millis(500));
     }
   }
