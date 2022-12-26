@@ -11,10 +11,11 @@ async fn get() -> Result<()> {
     dotenv().ok();
 
     let client = Client::new();
-    let url = env::var("URL").expect("URL must be set");
+    let url = env::var("TOKEN").unwrap();
+    
     let response = client
         .get(url)
-        .query(&[("zipcode", "1000002")])
+        .header("Authorization", env::var("TOKEN").unwrap())
         .send()
         .await?;
     
