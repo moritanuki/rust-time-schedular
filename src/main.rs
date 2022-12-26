@@ -11,7 +11,7 @@ async fn get() -> Result<()> {
     dotenv().ok();
 
     let client = Client::new();
-    let url = env::var("TOKEN").unwrap();
+    let url = env::var("URL").unwrap();
     
     let response = client
         .get(url)
