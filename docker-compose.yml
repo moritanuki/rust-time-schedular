@@ -7,3 +7,4 @@ services:
       - .:/usr/rust-time-scheduler
     # tty: true
     # stdin_open: true
+    command: /bin/sh -c "cargo watch -x run"
